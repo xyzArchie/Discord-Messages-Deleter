@@ -59,7 +59,8 @@ if path.exists('Token.json'):
 else:
     token = input('> Discord token: ')
     print()
-    with open('Token.json', 'w') as f: f.write('{\n    "token": "%s"\n}' % (token))
+    with open('Token.json', 'w') as f:
+        f.write('{\n    "token": "%s"\n}' % (token))
 
 try:
     client.run(token, bot=False)
