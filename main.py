@@ -36,7 +36,7 @@ async def purge(ctx, amount):
     ).map(lambda m: m):
         await message.delete()
         deleted += 1
-        system('title [Discord Message Deleter] - Deleted Messages: %s' % (deleted))
+        system('title [Discord Message Deleter] - Deleted Messages: %s' % deleted)
         print('%s[%s%s%s] Deleted Message%s: %s%s' % (
             red(), white(), strftime('%H:%M:%S', gmtime()),
             red(), white(), message.content, reset())
@@ -53,7 +53,7 @@ async def masspurge(ctx):
     ).map(lambda m: m):
         await message.delete()
         deleted += 1
-        system('title [Discord Message Deleter] - Deleted Messages: %s' % (deleted))
+        system('title [Discord Message Deleter] - Deleted Messages: %s' % deleted)
         print('%s[%s%s%s] Deleted Message%s: %s%s' % (
             red(), white(), strftime('%H:%M:%S', gmtime()),
             red(), white(), message.content, reset())
@@ -77,7 +77,7 @@ else:
     token = input('> Discord token: ')
     print()
     with open('Token.json', 'w') as f:
-        f.write('{\n    "token": "%s"\n}' % (token))
+        f.write('{\n    "token": "%s"\n}' % token)
 
 try:
     client.run(token, bot=False)
